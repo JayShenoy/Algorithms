@@ -41,7 +41,8 @@ public class DictionaryViewer {
 		Dictionary d = new Dictionary("dictionary.txt");
 		Instant end = Instant.now();
 		Duration diff = Duration.between(start, end);
-		System.out.println("Time to load dictionary: " + diff.getSeconds() + " seconds.");
+		double diffSeconds = diff.toMillis() / 1000.0;
+		System.out.println("Time to load dictionary: " + diffSeconds + " seconds.");
 
 		DictionaryViewer dv = new DictionaryViewer(d);
 		Scanner s = new Scanner(System.in);
